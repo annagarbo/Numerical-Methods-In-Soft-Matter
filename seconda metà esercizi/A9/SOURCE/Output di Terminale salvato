@@ -1,0 +1,2345 @@
+Last login: Tue Sep  3 11:08:50 on ttys000
+(base) annagarbo1@iMac-di-Andrea ~ % cd Desktop 
+(base) annagarbo1@iMac-di-Andrea Desktop % cd Numerical\ Methods\ in\ Soft\ Matter
+(base) annagarbo1@iMac-di-Andrea Numerical Methods in Soft Matter % ls
+L01			L11			L21
+L02			L12			L22
+L03			L13			L23
+L04			L14			L24
+L05			L15			esercizi
+L06			L16			prima metà esercizi
+L07			L17			seconda metà esercizi
+L08			L18			softmatter_esercizi
+L09			L19
+L10			L20
+(base) annagarbo1@iMac-di-Andrea Numerical Methods in Soft Matter % cd seconda\ metà\ esercizi
+(base) annagarbo1@iMac-di-Andrea seconda metà esercizi % ls
+A6	A8	A9
+(base) annagarbo1@iMac-di-Andrea seconda metà esercizi % cd A9
+(base) annagarbo1@iMac-di-Andrea A9 % ls
+HARD_SPHERES.ipynb	comparison_plot.png	param.dat
+LJ_T09.txt		hard.c			results.txt
+LJ_T2.dat		lennard			results_t1.txt
+LennardJones.ipynb	lj.c			results_t2.txt
+SOURCE			main			spheres
+(base) annagarbo1@iMac-di-Andrea A9 % cd SOURCE 
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.c -lm && ./lennard
+
+clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is deprecated [-Wdeprecated]
+In file included from lennard.c:13:
+./energy.h:29:44: error: no member named 'sigma_cut' in 'System'
+                    if(r != 0 && r < mySys.sigma_cut){
+                                     ~~~~~ ^
+./energy.h:30:41: error: no member named 'eps' in 'System'
+                        en += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                                  ~~~~~ ^
+./energy.h:33:41: error: no member named 'sigma_cut' in 'System'
+                    else if(r >=  mySys.sigma_cut){
+                                  ~~~~~ ^
+./energy.h:41:56: error: no member named 'density' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                 ~~~~~ ^
+./energy.h:41:101: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                              ~~~~~ ^
+./energy.h:41:141: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                                                                      ~~~~~ ^
+./energy.h:69:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut && r != 0){
+                          ~~~~~ ^
+./energy.h:70:33: error: no member named 'eps' in 'System'
+            en_new -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:71:34: error: no member named 'eps' in 'System'
+            en_diff -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:73:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+./energy.h:90:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut){
+                          ~~~~~ ^
+./energy.h:91:33: error: no member named 'eps' in 'System'
+            en_new += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:92:34: error: no member named 'eps' in 'System'
+            en_diff += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:94:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+In file included from lennard.c:14:
+./pressure2.h:24:43: error: no member named 'eps' in 'System'
+                    virial +=  48 * mySys.eps * ( 0.5*pow(mySys.sigma / rij,6) -  pow(mySys.sigma / rij, 12));
+                                    ~~~~~ ^
+./pressure2.h:35:53: error: no member named 'density' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                              ~~~~~ ^
+./pressure2.h:35:103: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                ~~~~~ ^
+./pressure2.h:35:144: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                                                         ~~~~~ ^
+lennard.c:57:11: error: no member named 'realiz' in 'System'
+    mySys.realiz = 100;    // MC realizations
+    ~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+In file included from lennard.cpp:13:
+./energy.h:29:44: error: no member named 'sigma_cut' in 'System'
+                    if(r != 0 && r < mySys.sigma_cut){
+                                     ~~~~~ ^
+./energy.h:30:41: error: no member named 'eps' in 'System'
+                        en += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                                  ~~~~~ ^
+./energy.h:33:41: error: no member named 'sigma_cut' in 'System'
+                    else if(r >=  mySys.sigma_cut){
+                                  ~~~~~ ^
+./energy.h:41:56: error: no member named 'density' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                 ~~~~~ ^
+./energy.h:41:101: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                              ~~~~~ ^
+./energy.h:41:141: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                                                                      ~~~~~ ^
+./energy.h:69:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut && r != 0){
+                          ~~~~~ ^
+./energy.h:70:33: error: no member named 'eps' in 'System'
+            en_new -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:71:34: error: no member named 'eps' in 'System'
+            en_diff -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:73:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+./energy.h:90:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut){
+                          ~~~~~ ^
+./energy.h:91:33: error: no member named 'eps' in 'System'
+            en_new += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:92:34: error: no member named 'eps' in 'System'
+            en_diff += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:94:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+In file included from lennard.cpp:14:
+./pressure2.h:24:43: error: no member named 'eps' in 'System'
+                    virial +=  48 * mySys.eps * ( 0.5*pow(mySys.sigma / rij,6) -  pow(mySys.sigma / rij, 12));
+                                    ~~~~~ ^
+./pressure2.h:35:53: error: no member named 'density' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                              ~~~~~ ^
+./pressure2.h:35:103: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                ~~~~~ ^
+./pressure2.h:35:144: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                                                         ~~~~~ ^
+lennard.cpp:57:11: error: no member named 'realiz' in 'System'
+    mySys.realiz = 100;    // MC realizations
+    ~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+In file included from lennard.cpp:13:
+./energy.h:29:44: error: no member named 'sigma_cut' in 'System'
+                    if(r != 0 && r < mySys.sigma_cut){
+                                     ~~~~~ ^
+./energy.h:30:41: error: no member named 'eps' in 'System'
+                        en += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                                  ~~~~~ ^
+./energy.h:33:41: error: no member named 'sigma_cut' in 'System'
+                    else if(r >=  mySys.sigma_cut){
+                                  ~~~~~ ^
+./energy.h:41:56: error: no member named 'density' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                 ~~~~~ ^
+./energy.h:41:101: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                              ~~~~~ ^
+./energy.h:41:141: error: no member named 'sigma_cut' in 'System'
+        en += mySys.NPart * (8.0 / 3.0) * M_PI * mySys.density * (1. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9) - pow(mySys.sigma / mySys.sigma_cut, 3));
+                                                                                                                                      ~~~~~ ^
+./energy.h:69:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut && r != 0){
+                          ~~~~~ ^
+./energy.h:70:33: error: no member named 'eps' in 'System'
+            en_new -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:71:34: error: no member named 'eps' in 'System'
+            en_diff -= 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:73:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+./energy.h:90:33: error: no member named 'sigma_cut' in 'System'
+        if (r !=0 && r <= mySys.sigma_cut){
+                          ~~~~~ ^
+./energy.h:91:33: error: no member named 'eps' in 'System'
+            en_new += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                          ~~~~~ ^
+./energy.h:92:34: error: no member named 'eps' in 'System'
+            en_diff += 4 * mySys.eps * (pow((mySys.sigma / r),12) - pow((mySys.sigma / r),6));
+                           ~~~~~ ^
+./energy.h:94:28: error: no member named 'sigma_cut' in 'System'
+        else if (r > mySys.sigma_cut){
+                     ~~~~~ ^
+In file included from lennard.cpp:14:
+./pressure2.h:24:43: error: no member named 'eps' in 'System'
+                    virial +=  48 * mySys.eps * ( 0.5*pow(mySys.sigma / rij,6) -  pow(mySys.sigma / rij, 12));
+                                    ~~~~~ ^
+./pressure2.h:35:53: error: no member named 'density' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                              ~~~~~ ^
+./pressure2.h:35:103: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                ~~~~~ ^
+./pressure2.h:35:144: error: no member named 'sigma_cut' in 'System'
+        pressure += (16.0 / 3.0) * M_PI * pow(mySys.density, 2.) * (2. / 3. * pow(mySys.sigma / mySys.sigma_cut, 9.) - pow(mySys.sigma / mySys.sigma_cut, 3.));
+                                                                                                                                         ~~~~~ ^
+lennard.cpp:57:11: error: no member named 'realiz' in 'System'
+    mySys.realiz = 100;    // MC realizations
+    ~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+20 errors generated.
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+ Running with density = 20  0.16
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 2
+pressure -> 0.0469721
+ Running with density = 22  0.176
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 1
+pressure -> 0.00337922
+ Running with density = 26  0.208
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 3
+pressure -> 0.0276184
+ Running with density = 32  0.256
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 3
+pressure -> -0.00275545
+ Running with density = 40  0.32
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 6
+pressure -> -0.0242797
+ Running with density = 50  0.4
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 9
+pressure -> -0.0600883
+ Running with density = 62  0.496
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 13
+pressure -> 0.0885186
+ Running with density = 76  0.608
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 20
+pressure -> 0.619564
+ Running with density = 92  0.736
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 30
+pressure -> 2.44767
+ Running with density = 110  0.88
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 43
+pressure -> 7.68026
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard lennard.cpp -lm && ./lennard1
+
+zsh: no such file or directory: ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+lennard.cpp:17:8: error: redefinition of 'mySys'
+System mySys
+       ^
+./definitions.h:52:8: note: previous definition is here
+System mySys;
+       ^
+lennard.cpp:17:13: error: expected ';' after top level declarator
+System mySys
+            ^
+            ;
+2 errors generated.
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+lennard.cpp:17:8: error: redefinition of 'mySys'
+System mySys;
+       ^
+./definitions.h:52:8: note: previous definition is here
+System mySys;
+       ^
+1 error generated.
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+zsh: segmentation fault  ./lennard1
+(base) annagarbo1@iMac-di-Andrea SOURCE % g++ -o lennard1 lennard.cpp -lm && ./lennard1
+
+ Running with density = 20  0.16
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 1
+pressure -> 0.163967
+ Running with density = 22  0.176
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 2
+pressure -> 0.161295
+ Running with density = 26  0.208
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 2
+pressure -> 0.143728
+ Running with density = 32  0.256
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 3
+pressure -> 0.125952
+ Running with density = 40  0.32
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 6
+pressure -> 0.0588554
+ Running with density = 50  0.4
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 9
+pressure -> -0.0424713
+ Running with density = 62  0.496
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 13
+pressure -> -0.17933
+ Running with density = 76  0.608
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 21
+pressure -> -0.0713173
+ Running with density = 92  0.736
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 29
+pressure -> 0.793678
+ Running with density = 110  0.88
+realiz -> 0
+realiz -> 1
+realiz -> 2
+realiz -> 3
+realiz -> 4
+realiz -> 5
+realiz -> 6
+realiz -> 7
+realiz -> 8
+realiz -> 9
+realiz -> 10
+realiz -> 11
+realiz -> 12
+realiz -> 13
+realiz -> 14
+realiz -> 15
+realiz -> 16
+realiz -> 17
+realiz -> 18
+realiz -> 19
+realiz -> 20
+realiz -> 21
+realiz -> 22
+realiz -> 23
+realiz -> 24
+realiz -> 25
+realiz -> 26
+realiz -> 27
+realiz -> 28
+realiz -> 29
+realiz -> 30
+realiz -> 31
+realiz -> 32
+realiz -> 33
+realiz -> 34
+realiz -> 35
+realiz -> 36
+realiz -> 37
+realiz -> 38
+realiz -> 39
+realiz -> 40
+realiz -> 41
+realiz -> 42
+realiz -> 43
+realiz -> 44
+realiz -> 45
+realiz -> 46
+realiz -> 47
+realiz -> 48
+realiz -> 49
+realiz -> 50
+realiz -> 51
+realiz -> 52
+realiz -> 53
+realiz -> 54
+realiz -> 55
+realiz -> 56
+realiz -> 57
+realiz -> 58
+realiz -> 59
+realiz -> 60
+realiz -> 61
+realiz -> 62
+realiz -> 63
+realiz -> 64
+realiz -> 65
+realiz -> 66
+realiz -> 67
+realiz -> 68
+realiz -> 69
+realiz -> 70
+realiz -> 71
+realiz -> 72
+realiz -> 73
+realiz -> 74
+realiz -> 75
+realiz -> 76
+realiz -> 77
+realiz -> 78
+realiz -> 79
+realiz -> 80
+realiz -> 81
+realiz -> 82
+realiz -> 83
+realiz -> 84
+realiz -> 85
+realiz -> 86
+realiz -> 87
+realiz -> 88
+realiz -> 89
+realiz -> 90
+realiz -> 91
+realiz -> 92
+realiz -> 93
+realiz -> 94
+realiz -> 95
+realiz -> 96
+realiz -> 97
+realiz -> 98
+realiz -> 99
+total simulation time: 44
+pressure -> 4.97712
+(base) annagarbo1@iMac-di-Andrea SOURCE % 
